@@ -1,0 +1,439 @@
+:root {
+  --primary: #1A8E95;
+  --dark: #0B1233;
+  --light: #D7EEF6;
+  --text: #101828;
+  --muted: #667085;
+  --shadow: 0 10px 30px rgba(16, 24, 40, .08);
+}
+
+/* ================== Reset & Base ================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Alexandria", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+  direction: rtl;
+  color: var(--text);
+  background-color: #fff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ================== Layout ================== */
+
+.container {
+  margin-inline: auto;
+  width: min(1120px, calc(100% - 48px));
+}
+
+/* ================== Header ================== */
+
+.site-header {
+  background: #fff;
+  padding: 22px 0;
+}
+
+.nav-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.brand-text {
+  display: inline-block;
+  font-family: "Alkalami", serif;
+  font-size: 45px;
+  font-weight: 400;
+  line-height: 1;
+  color: #25B6BA;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-weight: 600;
+  color: #111827;
+  margin-inline: auto;
+}
+
+.nav-link {
+  font-size: 16px;
+  padding: 6px 2px;
+  opacity: .9;
+  position: relative;
+}
+
+.nav-link.active {
+  opacity: 1;
+  font-weight: 800;
+}
+
+.cta {
+  background: var(--dark);
+  color: #fff;
+  padding: 10px 18px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+/* ================== Services Hero ================== */
+
+.services-hero {
+  padding: 70px 0 26px;
+  text-align: right;
+  position: relative;
+  overflow: visible;
+}
+
+.services-hero--tight {
+  padding-top: 110px;
+  padding-bottom: 34px;
+}
+
+.services-hero > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.services-hero .k {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 500;
+  opacity: .75;
+  color: #0B1233;
+}
+
+.services-title {
+  margin-top: 14px;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.55;
+  color: #0B1233;
+}
+
+/* Highlight */
+
+.services-title .hl {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.services-title .hl::before {
+  content: "";
+  position: absolute;
+  inset-inline: -6px;
+  top: 50%;
+  height: .45em;
+  background: #CFEAF4;
+  transform: translateY(-50%);
+  z-index: -1;
+  border-radius: 12px;
+}
+
+/* ================== Shapes ================== */
+
+.services-shapes {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.services-shapes img{
+  position: absolute;
+  height: auto;
+  opacity: .95;
+  filter: drop-shadow(0 10px 20px rgba(16,24,40,.10));
+}
+
+
+.services-shapes .v1 { top: 10px; right: 160px; width: 50px; }
+.services-shapes .v2 { top: 18px; left: 44%; width: 50px; transform: translateX(-50%); }
+.services-shapes .v3 { top: 90px; left: 230px; width: 72px; }
+.services-shapes .v4 { top: 360px; left: 220px; width: 75px; }
+.services-shapes .v5 { top: 450px; left: 220px; width: 150px; }
+.services-shapes .v6 { top: 590px; left: 210px; width: 75px; }
+.services-shapes .v7 { top: 400px; right: 240px; width: 67px; }
+
+/* ================== Pills ================== */
+
+.pills {
+  margin-top: 44px;
+  display: grid;
+  gap: 22px 26px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 920px;
+  margin-inline: auto;
+}
+
+.pill {
+  background: #DFF3FA;
+  border-radius: 18px;
+  padding: 24px 18px;
+  text-align: center;
+  font-size: 19px;
+  font-weight: 800;
+  color: #0B1233;
+}
+
+.pill.wide {
+  grid-column: 1 / -1;
+  padding: 26px 18px;
+}
+
+/* ================== Teal Band ================== */
+
+.teal-band {
+  margin-top: 10px;
+  background: var(--primary);
+  color: #fff;
+  padding: 50px 0 0;
+}
+
+.service-cards {
+  display: grid;
+  gap: 70px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 1200px;
+  margin-inline: auto;
+  direction: rtl;
+}
+
+.service-card {
+  text-align: right;
+  padding-top: 18px;
+  padding-bottom: 55px;
+}
+
+.service-card .num {
+  font-size: 14px;
+  opacity: .95;
+  margin-bottom: 12px;
+}
+
+.service-card .num::after {
+  content: "";
+  display: block;
+  margin-top: 12px;
+  height: 2px;
+  width: 260px;
+  background: rgba(255, 255, 255, .75);
+}
+
+.service-card h3 {
+  margin-top: 18px;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.service-card p {
+  margin-top: 14px;
+  max-width: 320px;
+  font-size: 13px;
+  line-height: 1.9;
+  opacity: .9;
+}
+
+.service-card a {
+  margin-top: 18px;
+  display: inline-block;
+  background: var(--dark);
+  color: #fff;
+  padding: 8px 12px;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+/* ================== Dots ================== */
+
+.band-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 26px 0 180px;
+  background: #fff;
+}
+
+.band-dots .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #D1D5DB;
+}
+
+.band-dots .dot.active {
+  width: 22px;
+  background: #111827;
+}
+
+/* ================== Subscribe ================== */
+
+.subscribe {
+  background: var(--light);
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.subscribe-shapes {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.subscribe-shapes .s-shape {
+  position: absolute;
+  opacity: .95;
+  filter: drop-shadow(0 10px 20px rgba(16, 24, 40, .10));
+}
+
+.subscribe-shapes .s1 { top: 26px; left: 40px; width: 100px; }
+.subscribe-shapes .s2 { bottom: 70px; left: 180px; width: 37px; }
+.subscribe-shapes .s3 { top: 140px; right: 320px; width: 37px; }
+.subscribe-shapes .s4 { bottom: 5px; right: 20px; width: 120px; }
+
+.subscribe-box {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  gap: 18px;
+}
+
+.subscribe-box h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #040C2B;
+  padding-bottom: 20px;
+}
+
+.subscribe-form {
+  display: flex;
+  width: min(560px, 100%);
+  background: #fff;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.subscribe-form input {
+  flex: 1;
+  border: 0;
+  outline: none;
+  padding: 16px 18px;
+  font-size: 27px;
+  font-weight: 400;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.subscribe-form button {
+  border: 0;
+  background: var(--dark);
+  color: #fff;
+  padding: 0 26px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* ================== Footer ================== */
+
+.site-footer {
+  background: var(--primary);
+  color: #fff;
+  padding: 78px 0 88px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 80px;
+}
+
+.footer-brand {
+  justify-self: end;
+  text-align: right;
+  transform: translateX(60px);
+}
+
+.footer-wordmark {
+  font-family: "Alkalami", serif;
+  font-size: 72px;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.footer-desc {
+  max-width: 520px;
+  font-size: 19px;
+  line-height: 2.05;
+  opacity: .95;
+}
+
+.footer-social {
+  margin-top: 26px;
+  display: flex;
+  gap: 16px;
+  margin-left: auto;
+}
+
+.soc {
+  width: 50px;
+  height: 50px;
+  border-radius: 999px;
+  background: #C9E3F2;
+  display: grid;
+  place-items: center;
+  color: #148892;
+}
+
+.soc svg {
+  width: 30px;
+  height: 30px;
+}
+
+/* ================== WhatsApp ================== */
+
+.whatsapp-fab {
+  position: fixed;
+  left: 22px;
+  bottom: 22px;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: transparent;
+  display: grid;
+  place-items: center;
+  z-index: 999;
+}
+
+.whatsapp-fab.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: .25s ease;
+}
+

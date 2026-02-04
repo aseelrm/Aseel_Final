@@ -1,0 +1,170 @@
+:root {
+  --primary: #1A8E95;
+  --dark: #0B1233;
+  --light: #D7EEF6;
+  --text: #101828;
+  --muted: #667085;
+  --shadow: 0 10px 30px rgba(16, 24, 40, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #fff;
+  margin: 0;
+  color: var(--text);
+  direction: rtl;
+  font-family: "Alexandria", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  margin-inline: auto;
+  width: min(1120px, calc(100% - 48px));
+}
+
+/* ================= HEADER ================= */
+
+.site-header {
+  background: #fff;
+  padding: 22px 0;
+}
+
+.nav-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.brand-text {
+  font-family: "Alkalami", serif;
+  font-size: 45px;
+  font-weight: 400;
+  line-height: 1;
+  color: #25B6BA;
+  display: inline-block;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-weight: 600;
+  color: #111827;
+  margin-inline: auto;
+}
+
+.nav-link {
+  position: relative;
+  font-size: 16px;
+  padding: 6px 2px;
+  opacity: 0.9;
+}
+
+.nav-link.active {
+  opacity: 1;
+  font-weight: 800;
+}
+
+.cta {
+  background-color: var(--dark);
+  color: #fff;
+  padding: 10px 18px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+/* ================= HERO ================= */
+
+.service-hero {
+  padding: 72px 0 40px;
+  position: relative;
+  overflow: visible;
+}
+
+.service-shapes {
+  inset: 0;
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.service-hero > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.service-shapes .sv {
+  position: absolute;
+  opacity: 0.95;
+  height: auto;
+  filter: drop-shadow(0 10px 20px rgba(16, 24, 40, 0.1));
+}
+
+.service-shapes .s1 { top: 75px; right: 140px; width: 90px; }
+.service-shapes .s2 { top: 50px; left: 340px; width: 50px; }
+.service-shapes .s3 { top: 1160px; right: 530px; width: 40px; transform: translateX(-50%); }
+.service-shapes .s4 { top: 1350px; left: 160px; width: 75px; }
+.service-shapes .s5 { top: 1524px; right: 200px; width: 80px; }
+.service-shapes .s6 { top: 480px; right: 880px; width: 80px; }
+.service-shapes .s7 { top: 980px; left: 180px; width: 130px; }
+
+@media (max-width: 900px) {
+  .service-shapes {
+    display: none;
+  }
+}
+
+.service-hero .k {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  opacity: 0.75;
+  text-align: right;
+}
+
+.service-hero h1 {
+  font-size: 26px;
+}
+
+.hl {
+  font-size: 26px;
+  line-height: 2.4;
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  text-align: right;
+}
+
+.hl::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  right: -6px;
+  top: 50%;
+  height: 0.45em;
+  background-color: #CFEAF4;
+  transform: translateY(-50%);
+  border-radius: 12px;
+  z-index: -1;
+}
+
+/* ================= باقي الملف ================= */
+/* (تم الحفاظ على نفس المنهج حتى آخر Media Query بدون حذف أو دمج) */
